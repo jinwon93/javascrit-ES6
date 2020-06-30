@@ -9,10 +9,11 @@
     <script>
     var i = 0;
     for (i= 0; i < 10; i++) {
-        if (i == 5) {
-            continue;
+        for (var j = 0; j < 5; j++) {
+            document.write('Hellow'+i+j+'<br />');    
+
         }
-        document.write('Hellow <br />');
+        
     }
     </script>
 </body>
