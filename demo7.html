@@ -7,11 +7,19 @@
 </head>
 <body>
     <script>
-        var member  = ['1','2','3'];
-        function get_member1(){
-            return '1';
+        function get_member(){
+            return ['jinwon','jinwon2','jinwon3','jinwon4'];
         }
-        document.write(get_member1());
+        // toUpperCase 소문자를 --> 대문자로
+        member =get_member();
+        for (i = 0; i < member.length; i++) {
+            document.write(member[i].toUpperCase()+'<br />');
+
+        }
+        /*document.write(member[0].toUpperCase()+'<br />');
+        document.write(member[1].toUpperCase()+'<br />');
+        document.write(member[2].toUpperCase()+'<br />');*/
+        // alert(member.length);
     </script>
 </body>
 </html>
