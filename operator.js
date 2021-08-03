@@ -21,3 +21,56 @@ function check() {
     }
     return true;
 }
+
+let name2 = 'jin';
+// operators 
+if (name2 === "jin") {
+    console.log('hi jin');
+}else if(name2 === "won") {
+    console.log('hi won');
+}else{
+    console.log('not!!');
+}
+
+
+// Ternary operator 
+// 첫번째 name2이 jin이 맞다면 ? yes를 실행하고 거짓이면 yes옆에 : 다음에 있는 no를 실행해라
+console.log(name2 === 'jin' ? 'yes':'no');
+
+const Browser = 'Chrome';
+
+switch (Browser) {
+    case 'IE':
+        console.log('get out');
+        break;
+    case 'Chrome':
+    case 'Safari':
+        console.log('hellow');
+        break;
+    case 'FireFox':
+        console.log('nice');
+        break
+    default:
+        console.log('bye');
+        break;
+}
+
+// Loops 
+let i = 4;
+while (i > 0) {
+    console.log(`while:${i}`);
+    i--;
+}
+
+// for Loop 
+for (i = 0; i < 4; i++) {
+    console.log(`for:${i}`);
+}
+// 지역변수 설정가능 !! 
+for (let i = 0; i < 3; i++) {
+    console.log(`for:${i}`);   
+}
+//nested Loop 
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+}
