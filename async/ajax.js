@@ -23,3 +23,21 @@ alert("불러오기 실패");
 });
 
 
+$.ajax({
+url:"/score/ajax/add_score",
+type:"POST",
+data:JSON.stringify(params),
+contentType: "application/json",
+success: function(result) {
+if (result) {
+alert("저장되었습니다.");
+} else {
+alert("잠시 후에 시도해주세요.");
+}
+},
+error: function() {
+alert("에러 발생");
+}
+})
+
+
