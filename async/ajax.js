@@ -10,7 +10,7 @@ Ajax는 비동기 처리 모델 (또는 non-blocking 이라고도 함)을 사용
 반면에 Ajax를 사용하면 브라우저는 서버에 데이터를 요청한 뒤 페이지의 나머지를 로드하고 페이지와 사용자의 상호작용을 처리합니다.
 
 
-
+//ex
 $.ajax({
 url:"/score/ajax/research",
 type:"POST",
@@ -39,5 +39,19 @@ error: function() {
 alert("에러 발생");
 }
 })
+
+//Ajax async ex
+
+function ykCheckEmailDup() {
+  $.ajax({
+    data: { email: "example@example.com" },
+    url: "emailcheck",
+    dataType: "json",
+    success: function (data) {
+      var result = data;
+      return result;
+    },
+  });
+}
 
 
