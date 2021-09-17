@@ -1,0 +1,7 @@
+
+
+//map ex
+var arr = ['foo', 'hello', 'diamond', 'A']
+// 각 요소의 글자 길이값 반환
+var arr2 = arr.map((v) => v.length)
+console.log(arr2)	 // [3, 5, 7, 1]
