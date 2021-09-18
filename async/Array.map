@@ -5,3 +5,20 @@ var arr = ['foo', 'hello', 'diamond', 'A']
 // 각 요소의 글자 길이값 반환
 var arr2 = arr.map((v) => v.length)
 console.log(arr2)	 // [3, 5, 7, 1]
+
+
+
+//filter ex
+var arr = [4, 15, 377, 395, 400, 1024, 3000]
+var arr2 = arr.filter((v) => (v % 5 === 0))
+console.log(arr2)	// [15, 395, 400, 3000]
+
+//version 2
+var arr = [4, 15, 377, 395, 400, 1024, 3000]
+var arr2 = arr.reduce((pre, value) => {
+    if (value % 5 == 0) {
+        pre.push(value);
+    }
+    return pre;
+}, []);
+console.log(arr2)   
