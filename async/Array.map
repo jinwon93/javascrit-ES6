@@ -22,3 +22,40 @@ var arr2 = arr.reduce((pre, value) => {
     return pre;
 }, []);
 console.log(arr2)   
+
+
+//test code 1
+const fruits1 = ['apple', 'banana', 'orange'];
+{
+  // My
+  let result = ``;
+  fruits1.forEach((item, index) => {
+    result += item;
+    if (index < fruits1.length-1) result += `, `;
+  });
+  console.log(result); // > apple, banana, orange
+}
+{
+  // Solution
+  const result = fruits1.join(`, `);
+  console.log(result); // > apple, banana, orange
+}
+
+//test code 2
+
+const fruits2 = '🍎, 🥝, 🍌, 🍒';
+{
+  // My
+  const result = [];
+  for (let item of fruits2) {
+    if ((item !== `,`) && (item !== ` `)) {
+      result.push(item);
+    }
+  }
+  console.log(result); // > ["🍎", "🥝", "🍌", "🍒"]
+}
+{
+  // Solution
+  const result = fruits2.split(`, `);
+  console.log(result); // > ["🍎", "🥝", "🍌", "🍒"]
+}
