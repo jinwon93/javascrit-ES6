@@ -59,3 +59,30 @@ const fruits2 = '🍎, 🥝, 🍌, 🍒';
   const result = fruits2.split(`, `);
   console.log(result); // > ["🍎", "🥝", "🍌", "🍒"]
 }
+//reverse
+const array1 = [1, 2, 3, 4, 5];
+{
+  // My
+  array1.sort((a, b) => b - a);
+  console.log(array1); // > [5, 4, 3, 2, 1] : 기존의 배열이 바뀜
+}
+{
+  // Solution
+  const result = array1.reverse();
+  console.log(array1); // > [1, 2, 3, 4, 5] : 기존의 배열이 바뀜
+  // console.log(result); // > [1, 2, 3, 4, 5] : 리턴값 존재
+}
+//slice
+const array2 = [1, 2, 3, 4, 5];
+{
+  // My
+  const result = array2.filter((item, index) => index > 1);
+  console.log(result); // > [3, 4, 5]
+  // console.log(array2); // > [1, 2, 3, 4, 5] : 기존의 배열은 변화가 없음
+}
+{
+  // Solution
+  const result = array2.slice(2, 5);
+  console.log(result); // > [3, 4, 5]
+  // console.log(array2); // > [1, 2, 3, 4, 5] : 기존의 배열은 변화가 없음
+}
