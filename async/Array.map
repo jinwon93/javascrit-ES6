@@ -86,3 +86,36 @@ const array2 = [1, 2, 3, 4, 5];
   console.log(result); // > [3, 4, 5]
   // console.log(array2); // > [1, 2, 3, 4, 5] : 기존의 배열은 변화가 없음
 }
+
+//find 
+class Student {
+  constructor(name, age, enrolled, score) {
+    this.name = name;
+    this.age = age;
+    this.enrolled = enrolled;
+    this.score = score;
+  }
+}
+const students = [
+  new Student('A', 29, true, 45),
+  new Student('B', 28, false, 80),
+  new Student('C', 30, true, 90),
+  new Student('D', 40, false, 66),
+  new Student('E', 18, true, 88),
+];
+{
+  // My Q2
+  let result = {};
+  for (let index in students) {
+    if (students[index].score === 90) {
+      result = students[index];
+      break;
+    }
+  }
+  console.log(result); // > Student {name: "C", age: 30, enrolled: true, score: 90}
+}
+{
+  // Solution
+  const result = students.find((student) => student.score === 90);
+  console.log(result); // > Student {name: "C", age: 30, enrolled: true, score: 90}
+}
