@@ -119,3 +119,31 @@ const students = [
   const result = students.find((student) => student.score === 90);
   console.log(result); // > Student {name: "C", age: 30, enrolled: true, score: 90}
 }
+
+//map
+// 결과는 다음과 같아야합니다. [45, 80, 90, 66, 88]
+{
+  // My
+  const result = [];
+  students.forEach((item) => result.push(item.score));
+  console.log(result); // > [45, 80, 90, 66, 88]
+}
+{
+  // Solution
+  const result = students.map((student) => student.score);
+  console.log(result); // > [45, 80, 90, 66, 88]
+}
+//some
+{
+  // My
+  students.forEach((item) => {
+    if (item.score < 50) console.log(true); // > true
+  });
+}
+{
+  // Solution
+  const result = students.some((student) => student.score < 50)
+  console.log(result); // > true
+  // const result2 = !students.every((student) => student.score >= 50)
+  // console.log(result2);
+}
