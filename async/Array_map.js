@@ -147,3 +147,27 @@ const students = [
   // const result2 = !students.every((student) => student.score >= 50)
   // console.log(result2);
 }
+
+{
+  // My
+  let result = 0;
+  students.forEach((item, index) => {
+    result += item.score
+    if (index === students.length - 1) {
+      result = result / students.length;
+    }
+  });
+  console.log(result); // > 73.8
+}
+//reduce
+{
+  // Solution
+  // const result = students.reduce((prev, curr) => {
+  //   console.log(prev); // return 된 값 (콜백함수의 2번째 인자가 없으면 값은 배열의 1번째 요소)
+  //   console.log(curr); // 배열의 요소 (콜백함수의 2번째 인자가 없으면 배열의 2번째 요소부터 시작)
+  //   console.log(`------------------`); // 구분선..
+  //   return curr; // 다음 prev의 값으로 할당됨
+  // });
+  const result = students.reduce((prev, curr) =>  prev += curr.score, 0); // 콜백함수의 2번째 인자가 0이므로 첫 prev의 값은 0으로 할당됨
+  console.log(result / students.length); // > 73.8
+}
