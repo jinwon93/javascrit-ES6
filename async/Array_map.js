@@ -171,3 +171,22 @@ const students = [
   const result = students.reduce((prev, curr) =>  prev += curr.score, 0); // 콜백함수의 2번째 인자가 0이므로 첫 prev의 값은 0으로 할당됨
   console.log(result / students.length); // > 73.8
 }
+//join
+// 결과는 '45, 80, 90, 66, 88' 이어야합니다.
+{
+	// My
+  let result = ``;
+  students.forEach((item, index) => {
+    result += item.score;
+    if (index < students.length - 1) result += `, `
+  });
+  console.log(result); // > 45, 80, 90, 66, 88
+}
+{
+  // Solution
+  const result = students
+    .map((student) => student.score)
+    // .filter((score) => score >= 50)
+    .join(`, `);
+  console.log(result); // > 45, 80, 90, 66, 88
+}
