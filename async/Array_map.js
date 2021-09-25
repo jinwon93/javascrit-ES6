@@ -190,3 +190,44 @@ const students = [
     .join(`, `);
   console.log(result); // > 45, 80, 90, 66, 88
 }
+
+//오름차순
+// 결과는 '45, 66, 80, 88, 90' 이어야합니다.
+{
+  // My
+  const scoreString = `45, 80, 90, 66, 88`;
+  // step 1. 배열로 변환
+  const scoreStringArray = [];
+  let temp = ``;
+  for(let i in scoreString) {
+    if (scoreString[i] === `,`) {
+      scoreStringArray.push(Number(temp));
+      temp = ``;
+      continue;
+    }
+    if (scoreString[i] === ` `) continue;
+    
+    temp += scoreString[i];
+
+    if (i == scoreString.length-1) scoreStringArray.push(Number(temp));
+  }
+  // step 2. 정렬
+  scoreStringArray.sort((a, b) => {
+    return a - b;
+  });
+  // step 3. 문자열로 변환
+  let result = ``;
+  scoreStringArray.forEach((item, index) => {
+    result += item;
+    if (index < scoreStringArray.length - 1) result += `, `
+  });
+  console.log(result); // > 45, 66, 80, 88, 90
+}
+{
+  // Solution
+  const result = students
+  .map((student) => student.score)
+  .sort((a, b) => a - b)
+  .join(`, `);
+  console.log(result); // > 45, 66, 80, 88, 90
+}
